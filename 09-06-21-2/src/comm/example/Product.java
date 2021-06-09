@@ -6,17 +6,19 @@ public class Product {
 	private String productName;
 	private Double productPrice;
 	private static Integer numberOfProduct;
+	private Double discountPrice;
 
 	static
 	{
 		numberOfProduct=0;
 	}
 
-	public  void  createProduct(String id, String name, Double price) {
+	public  void  createProduct(String id, String name, Double price,Double discount) {
 		numberOfProduct++;
 		productId = id;
 		productName = name;
 		productPrice = price;
+		discountPrice = discount;
 	}
 
 
@@ -29,9 +31,8 @@ public class Product {
 	@Override
 	public String toString() {
 		return "Product [productId=" + productId + ", productName=" + productName + ", productPrice=" + productPrice
-				+ "]";
+				+ ", discountPrice=" + discountPrice + "]";
 	}
-
-
-
+	
+	
 }
