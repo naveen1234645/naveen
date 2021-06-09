@@ -1,7 +1,7 @@
 package comm.model.test;
 
-import comm.model.Book;
-import comm.model.EBook;
+import comm.mode.Book;
+import comm.mode.EBook;
 
 public class TestBook
 {

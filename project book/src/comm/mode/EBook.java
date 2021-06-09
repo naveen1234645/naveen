@@ -1,4 +1,4 @@
-package comm.model;
+package comm.mode;
 
 public class EBook extends Book {
    private String downloadSite;
