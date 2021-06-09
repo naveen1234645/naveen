@@ -36,7 +36,11 @@ public class App {
 		} while (choice !=0);
 
 		
-		
+		Point point[]=new Point[10];
+		point[0]=new Point(10, 20);
+		//multidimentional array
+		int arr[][]=new int[3][10];
+
 
 
 
