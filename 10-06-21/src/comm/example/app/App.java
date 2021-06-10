@@ -39,7 +39,7 @@ public class App {
 		for(int i=0;i<app.employees.length;i++)
 		{
 			System.out.println(app.employees[i]);
-			out.println(app.employees[i]);
+			
 		}
 
 	}
