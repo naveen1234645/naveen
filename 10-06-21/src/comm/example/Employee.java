@@ -1,22 +1,22 @@
 package comm.example;
-
 public class Employee {
 	private Integer employeeId;
 	private String firstName;
 	private String lastName;
 	private String email;
+	private EmployeeType employeeType;
+	public static int max=10;
 	public Employee() {
 		super();
 	}
-	public Employee(Integer employeeId, String firstName, String lastName, String email) {
+	public Employee(Integer employeeId, String firstName, String lastName, String email,EmployeeType employeeType) {
 		super();
 		this.employeeId = employeeId;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
+		this.employeeType=employeeType;
 	}
-	
-	
 	public Integer getEmployeeId() {
 		return employeeId;
 	}
@@ -44,7 +44,7 @@ public class Employee {
 	@Override
 	public String toString() {
 		return "Employee [employeeId=" + employeeId + ", firstName=" + firstName + ", lastName=" + lastName + ", email="
-				+ email + "]";
+				+ email +"," + email + " Employee Type= "+employeeType +"]";
 	}
 
 
