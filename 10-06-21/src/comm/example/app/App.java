@@ -35,7 +35,7 @@ public class App {
 
 
 
-		//standard for loop
+		
 		for(int i=0;i<app.employees.length;i++)
 		{
 			System.out.println(app.employees[i]);
