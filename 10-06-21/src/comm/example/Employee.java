@@ -1,63 +1,51 @@
 package comm.example;
 
 public class Employee {
-
 	private Integer employeeId;
-	private String fristName;
+	private String firstName;
 	private String lastName;
 	private String email;
 	public Employee() {
 		super();
-		
 	}
-	
-	public Employee(Integer employeeId, String fristName, String lastName, String email) {
+	public Employee(Integer employeeId, String firstName, String lastName, String email) {
 		super();
 		this.employeeId = employeeId;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
 	}
-
+	
 	
 	public Integer getEmployeeId() {
-		return EmployeeId;
+		return employeeId;
 	}
-
 	public void setEmployeeId(Integer employeeId) {
-		EmployeeId = employeeId;
+		this.employeeId = employeeId;
 	}
-
-	public String getFristName() {
-		return FristName;
+	public String getFirstName() {
+		return firstName;
 	}
-
-	public void setFristName(String fristName) {
-		FristName = fristName;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
-
 	public String getLastName() {
-		return LastName;
+		return lastName;
 	}
-
 	public void setLastName(String lastName) {
-		LastName = lastName;
+		this.lastName = lastName;
 	}
-
 	public String getEmail() {
 		return email;
 	}
-
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
 	@Override
 	public String toString() {
-		return "Employee [EmployeeId=" + EmployeeId + ", FristName=" + FristName + ", LastName=" + LastName + ", email="
+		return "Employee [employeeId=" + employeeId + ", firstName=" + firstName + ", lastName=" + lastName + ", email="
 				+ email + "]";
 	}
-	
-	
-	
+
+
 }
