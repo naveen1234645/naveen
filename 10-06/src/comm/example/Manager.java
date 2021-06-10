@@ -8,9 +8,9 @@ public class Manager extends Employee{
 		// TODO Auto-generated constructor stub
 	}
 
-	public Manager(Integer employeeId, String fristName, String lastName, String email) {
+	public Manager(Integer employeeId, String fristName, String lastName, String email,String departmentName) {
 		super(employeeId, fristName, lastName, email);
-		this.departmentName=departmentName;
+		this.departmentName = departmentName;
 	}
 
 	public String getDepartmentName() {

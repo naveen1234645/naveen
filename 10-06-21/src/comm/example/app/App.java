@@ -1,5 +1,7 @@
 package comm.example.app;
+
 import java.util.Scanner;
+
 import comm.example.Employee;
 import comm.example.Engineer;
 import comm.example.Manager;
@@ -13,6 +15,7 @@ import static comm.example.EmployeeType.SALARIED;
 public class App {
 
 	
+
 	private static Scanner scanner=new Scanner(in);
 	private Employee[] employees;
 
@@ -31,12 +34,7 @@ public class App {
 		app.employees[2]=new Engineer(30, "Sachin", "Tendulkar", "sachin@email.com", SALARIED, "Mechanical");
 
 
-		//enhanched for loop
-		for(Employee employee : app.employees)
-		{
-			System.out.println(employee);
-		}
-		
+
 		//standard for loop
 		for(int i=0;i<app.employees.length;i++)
 		{
@@ -45,4 +43,5 @@ public class App {
 		}
 
 	}
-}
+
+} 
