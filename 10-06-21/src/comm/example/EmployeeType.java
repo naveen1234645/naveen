@@ -1,5 +1,4 @@
 package comm.example;
-
 public enum EmployeeType {
 
 	SALARIED,
@@ -20,4 +19,4 @@ public enum EmployeeType {
 
 
 
-}
+} 
