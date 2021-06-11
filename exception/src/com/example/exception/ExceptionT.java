@@ -1,26 +1,26 @@
-package com.example;
+package com.example.exception;
 
-public class Todo {
+public class ExceptionT {
 	private String todoId;
 	private String desc;
 	private boolean isCompleted;
 
-	public Todo() {
+	public ExceptionT() {
 		super();
 	}
 
-	public Todo(String todoId, String desc, boolean isCompleted) {
+	public ExceptionT(String todoId, String desc, boolean isCompleted) {
 		super();
 		this.todoId = todoId;
 		this.desc = desc;
 		this.isCompleted = isCompleted;
 	}
 
-	public String getTodoId() {
+	public String getExceptionT() {
 		return todoId;
 	}
 
-	public void setTodoId(String todoId) {
+	public void setExceptionT(String todoId) {
 		this.todoId = todoId;
 	}
 
@@ -42,9 +42,11 @@ public class Todo {
 
 	@Override
 	public String toString() {
-		return "Todo [todoId=" + todoId + ", desc=" + desc + ", isCompleted=" + isCompleted + "]";
+		return "ExceptionT [todoId=" + todoId + ", desc=" + desc + ", isCompleted=" + isCompleted + "]";
 	}
 
 
 
-}
+} 
+
+
