@@ -20,6 +20,13 @@ public class Tester {
 	}
 
 	private static Scanner scanner=new Scanner(System.in);
+	private void checkPrice(double price)
+	{
+		if(price<=100)
+		{
+			throw new InvalidPriceException("Invalid Price");
+		}
+	}
 	public static void main(String args[])
 
 	{
@@ -44,6 +51,17 @@ public class Tester {
 					String name=scanner.next();
 					System.out.print("Beer Price: ");
 					double price=scanner.nextDouble();
+					/*
+					 * if(price<=100) { throw new InvalidPriceException("Invalid Price"); }
+					 */
+					try {
+
+					} catch (InvalidPriceException e) {
+
+						System.err.println(e.getMessage());
+					}
+					tester.checkPrice(price);
+
 					tester.map.put(key++, new Beer(UUID.randomUUID().toString(), name, price));
 					System.out.println("Beer Added Sucessfully...");
 					break;
