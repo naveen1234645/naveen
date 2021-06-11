@@ -27,6 +27,13 @@ public class Tester {
 			throw new InvalidPriceException("Invalid Price");
 		}
 	}
+	private void checkName(String name)
+	{
+		if(name.length()<=5)
+		{
+			throw new InvalidNameException("Invalid Name");
+		}
+	}
 	public static void main(String args[])
 
 	{
@@ -56,11 +63,12 @@ public class Tester {
 					 */
 					try {
 
-					} catch (InvalidPriceException e) {
+					} catch (InvalidNameException e) {
 
 						System.err.println(e.getMessage());
 					}
 					tester.checkPrice(price);
+					tester.checkName(name);
 
 					tester.map.put(key++, new Beer(UUID.randomUUID().toString(), name, price));
 					System.out.println("Beer Added Sucessfully...");
