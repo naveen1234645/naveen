@@ -1,0 +1,2 @@
+Student [id=07d726d4-8f78-4347-bad9-d6e4852ced52, name=john, grade=A]
+Student [id=db1f940f-19fb-49f2-95b4-4f279a0ebbd4, name=doe, grade=B]
