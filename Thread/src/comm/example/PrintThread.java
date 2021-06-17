@@ -3,7 +3,7 @@ package comm.example;
 public class PrintThread extends Thread {
 	public PrintThread(String name) {
 		super(name);
-		start(;)
+		start();
 		
 	}
 	@Override
