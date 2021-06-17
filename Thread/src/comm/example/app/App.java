@@ -18,10 +18,10 @@ public class App {
 		t2.start();
 		
 
-		PrintThread thread1=new PrintThread("A");
-		thread1.start();
-		PrintThread thread2=new PrintThread("B");
-		thread2.start();
+		new PrintThread("A");
+		//thread1.start();
+		new PrintThread("B");
+		//thread2.start();
 	}
 
 }
