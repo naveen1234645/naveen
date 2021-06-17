@@ -23,10 +23,12 @@ public class App {
 		//thread2.start();
 		
 		
-		PrintRunnable printRunnable=new PrintRunnable("A"); 
+		/*PrintRunnable printRunnable=new PrintRunnable("A"); 
 		Thread t1=new Thread(printRunnable); t1.start();
 		PrintRunnable printRunnable1=new PrintRunnable("B");
-		Thread t2=new Thread(printRunnable1); t2.start();
+		Thread t2=new Thread(printRunnable1); t2.start();*/
+		new PrintRunnable("A");
+		new PrintRunnable("B");
 	}
 
 }

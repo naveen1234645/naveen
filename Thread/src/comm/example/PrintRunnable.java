@@ -10,7 +10,7 @@ public class PrintRunnable  implements Runnable{
 		this.name = name;
 		thread=new Thread(this,name);
 		System.out.println(thread.getName());
-		
+		thread.start();
 	}
 
 
