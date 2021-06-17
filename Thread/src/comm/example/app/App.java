@@ -3,6 +3,7 @@ package comm.example.app;
 import comm.example.PrintThread;
 import comm.example.PrintRunnable;
 import comm.example.ThreadTest;
+import comm.example.app.ThreadGroupTest;
 
 
 public class App {
