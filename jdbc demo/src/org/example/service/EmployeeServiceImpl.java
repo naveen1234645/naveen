@@ -1,3 +1,4 @@
+
 package org.example.service;
 import java.sql.SQLException;
 import java.util.List;
@@ -14,13 +15,18 @@ public class EmployeeServiceImpl implements EmployeeService{
 	@Override
 	public Employee createEmployee(Employee employee) throws SQLException {
 		// TODO Auto-generated method stub
-		//return null;
 		return employeeDao.createEmployee(employee);
 	}
-
 	@Override
 	public List<Employee> getAllEmployees() throws SQLException {
 		// TODO Auto-generated method stub
 		return employeeDao.getAllEmployees();
 	}
+
+	@Override
+	public List<Employee> findById(Integer id) throws SQLException {
+
+		return employeeDao.findById(id);
+	}
+
 }
