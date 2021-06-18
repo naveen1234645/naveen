@@ -15,8 +15,14 @@ import org.example.service.EmployeeService;
 import org.example.service.EmployeeServiceImpl;
 import org.example.db.Database;
 import org.example.db.DbtoFile;
+import org.example.dao.EmployeeNotFoundException;
+
+
+
+
 public class App {
-	public static void main(String[] args) throws SQLException, NumberFormatException, IOException {
+	//public static void main(String[] args) throws SQLException, NumberFormatException, IOException {
+		public static void main(String[] args) throws SQLException, NumberFormatException, IOException, EmployeeNotFoundException {
 		Database db=new Database();
 		DbtoFile dtf=new DbtoFile();
 		
@@ -32,6 +38,7 @@ public class App {
 			System.out.println("4. delete employee  id");
 			System.out.println("5. create employee file");
 			System.out.println("6.Enter Data of Employee to File from Database");
+			System.out.println("7. update employee by id");
 			System.out.println("0. exit");
 			System.out.print("enter your choice: ");
 			choice = Integer.parseInt(bufferedReader.readLine());
@@ -117,7 +124,12 @@ public class App {
 				dtf.toFile(filename);
 				
 			break;
-			
+			case 7:
+				System.out.print("enter id: ");
+				id = Integer.parseInt(bufferedReader.readLine());
+				employee=service.updateEmployee(id);
+				System.out.println("Updated Employee:\n"+employee);
+				break;
 			
 
 
