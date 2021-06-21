@@ -13,4 +13,6 @@ public interface EmployeeDao {
 
 	List<Employee> getAllEmployees1() throws SQLException;
 
+	Employee deleteEmployee(Integer id) throws SQLException, EmployeeNotFoundException;
+
 }
