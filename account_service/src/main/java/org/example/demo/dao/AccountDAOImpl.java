@@ -1,7 +1,6 @@
 package org.example.demo.dao;
 
-
-
+public class AccountDAOImpl {
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -18,7 +17,9 @@ public class AccountDAOImpl implements AccountDAO {
 
 	private Connection connection;
 	private List<AccountDTO> accounts;
+	private Account acc;
 	private MyConnectionFactory myConnectionFactory;
+
 
 	{
 		try {
@@ -61,14 +62,47 @@ public class AccountDAOImpl implements AccountDAO {
 	}
 
 	@Override
-	public void deposite(double amount) throws SQLException {
+	public void deposit(double amount) throws SQLException {
+		acc.setBalance(amount+acc.getBalance());
+		System.out.println("Rs. "+amount+" deposited successfully");
+		System.out.println("The new balance is Rs."+acc.getBalance());
+		PreparedStatement preparedStatement = connection.prepareStatement("insert into account(balance) values(?)");
+		preparedStatement.setDouble(1, acc.getBalance());
+		preparedStatement.executeUpdate();
+
+
 
 	}
 
 	@Override
-	public double withdrawl(double amount) throws SQLException {
+	public double withdraw(double amount) throws SQLException, AccountNotValidException {
 		// TODO Auto-generated method stub
-		return 0;
+
+		if(acc.getBalance()>500)
+		{
+			double newAmount=acc.getBalance()-amount;
+			if(newAmount>500)
+			{
+				acc.setBalance(newAmount);
+				PreparedStatement preparedStatement = connection.prepareStatement("insert into account(balance) values(?)");
+				preparedStatement.setDouble(1, acc.getBalance());
+				preparedStatement.executeUpdate();
+			}
+			else
+			{
+				throw new AccountNotValidException("Enter valid amount to withdraw");
+			}
+		}
+		else
+		{
+			throw new AccountNotValidException("Enter valid amount to withdraw");
+		}
+
+		return acc.getBalance();
+
+	}
+
+
 	}
 
 }
