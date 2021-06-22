@@ -15,6 +15,7 @@ import org.example.demo.model.City;
 public class App 
 {
 
+
     public static void main( String[] args ) throws SQLException
     {
     	AccountDAO accountDAO=new AccountDAOImpl();
