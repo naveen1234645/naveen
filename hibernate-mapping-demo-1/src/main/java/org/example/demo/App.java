@@ -52,7 +52,7 @@ public class App {
 
 
 	} catch (Exception e) {
-		// TODO: handle exception
+		
 		e.printStackTrace();
 			InstructorDetails details = new InstructorDetails();
 			details.setHobby("Singing");
