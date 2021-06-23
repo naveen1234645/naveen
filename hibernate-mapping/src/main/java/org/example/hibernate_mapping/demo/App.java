@@ -1,6 +1,6 @@
 package org.example.hibernate_mapping.demo;
 
-mport java.util.ArrayList;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.logging.Logger;
@@ -19,6 +19,7 @@ import org.example.hibernate_mapping.model.Users;
  * Hello world!
  *
  */
+@SuppressWarnings("unchecked")
 public class App 
 {
     public static void main( String[] args ) 
