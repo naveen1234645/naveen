@@ -16,13 +16,15 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
+
+
 public class App {
 	private static Logger logger = Logger.getLogger("org.example.hibernate_set.App.class");
 
 	public static void main(String[] args) {
 
 		Student student = new Student();
-		//PropertyConfigurator.configure("log4j.properties");
+		PropertyConfigurator.configure("log4j.properties");
 
 		StudentService service = new StudentServiceImpl();
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));

@@ -33,7 +33,7 @@ public class Student {
 	private String firstName;
 	@Column(name="last_name")
 	private String lastName;
-	@Column(name="gmail")
+	@Column(name="email")
 	private String gmail;
 	@ElementCollection
 	@CollectionTable(name="image",joinColumns = @JoinColumn(name="student_id"))
