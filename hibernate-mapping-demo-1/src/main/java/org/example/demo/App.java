@@ -14,6 +14,7 @@ import java.util.logging.Logger;
 
 import org.example.demo.model.Instructor;
 import org.example.demo.model.InstructorDetails;
+import org.example.demo.model.Course;
 
 /**
  * Hello world!
@@ -27,10 +28,33 @@ public class App
     	Logger logger=Logger.getLogger("org.example.App.class");
        try {
 
-    	   SessionFactory sessionFactory= new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Instructor.class).addAnnotatedClass(InstructorDetails.class).buildSessionFactory();
-    	   Session session=sessionFactory.getCurrentSession();
+    	  SessionFactory sessionFactory= new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Instructor.class).addAnnotatedClass(InstructorDetails.class).addAnnotatedClass(Course.class).buildSessionFactory();
+    	  
+    	  Session session=sessionFactory.getCurrentSession();
+    	   
+    	   Instructor instructor = new Instructor();
+			InstructorDetails details = new InstructorDetails();
+			details.setHobby("Singing");
+			details.setYoutubeChannel("channel-1");
+			instructor.setFirstName("John");
+			instructor.setLastName("Doe");
+			instructor.setEmail("john@email.com");
+			instructor.setInstructorDetails(details);
+			session.getTransaction().begin();
 
-    	   Instructor instructor=new Instructor();
+			Course course1 = new Course();
+			course1.setCourseName("Java");
+			instructor.add(course1);
+			Course course2 = new Course();
+
+			course2.setCourseName("Angular");
+			instructor.add(course2);
+			session.persist(instructor);
+			session.getTransaction().commit();
+			
+			
+
+    	  /* Instructor instructor=new Instructor();
     	   InstructorDetails details=new InstructorDetails();
     	   instructor.setFirstName("ramu");
     	   instructor.setLastName("raju");
@@ -43,7 +67,7 @@ public class App
     	   session.getTransaction().begin();
     	   session.persist(instructor);
     	   session.getTransaction().commit();
-    	   logger.info("Done!");
+    	   logger.info("Done!");*/
 //    
     	   //For Display
 //    	   session=sessionFactory.openSession();
