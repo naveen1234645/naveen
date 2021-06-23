@@ -35,7 +35,7 @@ public class Instructor {
 	private String lastName;
 	@Column(name = "email")
 	private String email;
-	@OneToOne(cascade = {
+	@OneToOne(mappedBy = "instructor", cascade = {
 			CascadeType.DETACH,
 			CascadeType.MERGE,
 			CascadeType.PERSIST,

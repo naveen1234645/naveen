@@ -15,6 +15,7 @@ import java.util.logging.Logger;
 import org.example.demo.model.Instructor;
 import org.example.demo.model.InstructorDetails;
 import org.example.demo.model.Course;
+import org.example.demo.model.People;
 
 /**
  * Hello world!
@@ -28,10 +29,15 @@ public class App
     	Logger logger=Logger.getLogger("org.example.App.class");
        try {
 
-    	  SessionFactory sessionFactory= new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Instructor.class).addAnnotatedClass(InstructorDetails.class).addAnnotatedClass(Course.class).buildSessionFactory();
+    	   SessionFactory sessionFactory= new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Instructor.class).addAnnotatedClass(InstructorDetails.class).addAnnotatedClass(Course.class).addAnnotatedClass(People.class).buildSessionFactory();
+
+
+
+
     	  
-    	  Session session=sessionFactory.getCurrentSession();
-    	   
+    	 
+    	   Session session=sessionFactory.getCurrentSession();
+
     	   Instructor instructor = new Instructor();
 			InstructorDetails details = new InstructorDetails();
 			details.setHobby("Singing");
@@ -42,6 +48,7 @@ public class App
 			instructor.setInstructorDetails(details);
 			session.getTransaction().begin();
 
+    	  // Instructor instructor=new Instructor();
 			Course course1 = new Course();
 			course1.setCourseName("Java");
 			instructor.add(course1);
@@ -49,9 +56,19 @@ public class App
 
 			course2.setCourseName("Angular");
 			instructor.add(course2);
+			//session.persist(instructor);
+			//session.getTransaction().commit();
+			People people1 = new People();
+			people1.setFirstName("p1");
+			people1.setLastname("q1");
+			people1.setEmail("r1");
 			session.persist(instructor);
+			List<Course> list = new ArrayList<Course>();
+			list.add(course1);
+			list.add(course2);
+			people1.setCourses(list);
+			session.persist(people1);
 			session.getTransaction().commit();
-			
 			
 
     	  /* Instructor instructor=new Instructor();
