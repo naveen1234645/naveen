@@ -3,20 +3,25 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-<bean name="theCD" class="org.example.demo.model.InternationalCD">
-<constructor-arg index="0" value="100"/>
-<constructor-arg index="1" value="Titanic"/>
-<constructor-arg index="2" value="French"/>
-</bean>
-<!-- 	<bean name="theCoach" class="org.example.demo.model.SwimmingCoach">
-		<constructor-arg name="fortuneService"
-			ref="myFortuneService" />
-	</bean> -->
-
-	<bean name="theCoach" class="org.example.demo.model.CricketCoach">
-	<property name="fortuneService" ref="myFortuneService"/>
-	</bean>
-	<bean name="myFortuneService"
-		class="org.example.demo.model.SadFortuneService"/>
-
+	 
+	 <bean name="theCustomer" class="org.example.demo.model.Customer">
+	 
+	 <property name="customerId" value="10"/>
+	 <property name="customerName" value="John Doe"/>
+	 <property name="address" ref="theAddress"/>
+	 <property name="branch" ref="theBranch"/>
+	 </bean>
+	 <bean name="theAddress" class="org.example.demo.model.Address">
+	 <constructor-arg name="addressLine1" value="Telengana"/>
+	 <constructor-arg name="addressLine2" value="India"/>
+	 <constructor-arg name="city" value="Hyderabad"/>
+	 <constructor-arg name="zipCode" value="56001"/>
+	 </bean>
+	 
+	 <bean name="theBranch" class="org.example.demo.model.Branch">
+	 <property name="branchId" value="10"/>
+	 <property name="branchName" value="branch-10"/>
+	 <property name="branchAddress" value="address-10"/>
+	 </bean>
 </beans>
+
