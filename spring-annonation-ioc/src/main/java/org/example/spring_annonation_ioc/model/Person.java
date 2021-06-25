@@ -23,6 +23,7 @@ public class Person {
 	// attribute level di
 //	@Autowired
 	private Address address;
+	
 
 	public Person() {
 		super();
@@ -97,5 +98,9 @@ public class Person {
 		return "Person [personId=" + personId + ", firstName=" + firstName + ", lastName=" + lastName + ", email="
 				+ email + ", team=" + team + ", country=" + country + ", address=" + address + "]";
 	}
+
+	
+
+	
 
 }
