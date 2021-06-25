@@ -9,11 +9,11 @@ import org.springframework.stereotype.Component;
 public class Person {
 	@Value("101")
 	private Integer personId;
-	@Value("Marry")
+	@Value("Naveen")
 	private String firstName;
-	@Value("Public")
+	@Value("Pathuri")
 	private String lastName;
-	@Value("marry@email.com")
+	@Value("naveen@email.com")
 	private String email;
 	@Value("${person.team}")
 	private String team;
