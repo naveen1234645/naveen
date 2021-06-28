@@ -11,12 +11,19 @@ import lombok.ToString;
 @AllArgsConstructor
 @Setter
 @Getter
-@ToString
+
 public class Book {
 	
 	private Integer bookId;
 	private String bookName;
 	private Double bookPrice;
+	
+	public void displayBook() {
+
+
+		System.out.println(bookId+"\t"+bookName+"\t"+bookPrice);
+		System.out.println("\n");
+	}
 	
 
 }
