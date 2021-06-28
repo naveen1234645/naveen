@@ -1,6 +1,5 @@
 package com.example.demo.dao;
 
-
 import java.sql.SQLException;
 import java.util.List;
 
@@ -9,7 +8,9 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import com.example.demo.BookNotFoundException;
 import com.example.demo.model.Book;
+import com.example.demo.model.BookRowMapper;
 
 @Repository
 public class BookDaoImpl implements BookDao {
@@ -43,19 +44,41 @@ public class BookDaoImpl implements BookDao {
 	@Override
 	public List<Book> displayAllBook() {
 
-		List<Book> books=jdbcTemplate.query("select * from book", new BeanPropertyRowMapper<Book>(Book.class));
+	//	List<Book> books=jdbcTemplate.query("select * from book", new BeanPropertyRowMapper<Book>(Book.class));
+		
+		List<Book> books=jdbcTemplate.query("select * from book", new BookRowMapper());
 		return books;
+	}
+
+	@Override
+	public List<Book> findBookById(Integer id) throws SQLException {
+		// TODO Auto-generated method stub
+		List<Book> list=jdbcTemplate.query("select * from book where book_id='"+id+"'",new BookRowMapper());
+			
+		
+		
+		return list;
+	}
+	
+	
+	
+	@Override
+	public List<Book> updateBookById(Integer id) throws SQLException {
+		
+		// TODO Auto-generated method stub
+
+
+		
+List<Book> list=jdbcTemplate.query("select * from book where book_id='"+id+"'",new BookRowMapper());
+			
+		
+		
+		return list;
 	}
 	
 	
 	
 	
-	
-	
-	
-	
-
-
 	
 	
 	

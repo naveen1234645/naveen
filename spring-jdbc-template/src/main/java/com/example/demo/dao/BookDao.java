@@ -1,7 +1,6 @@
 package com.example.demo.dao;
 
 
-
 import java.sql.SQLException;
 import java.util.List;
 
@@ -15,6 +14,7 @@ public interface BookDao {
 	
 	public List<Book> displayAllBook() throws SQLException;
 	
-
-
+	public List<Book> findBookById(Integer id)throws SQLException;
+	public List<Book> updateBookById(Integer id) throws SQLException;
+ 
 }
