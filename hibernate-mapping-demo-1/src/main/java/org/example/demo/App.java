@@ -21,22 +21,23 @@ import org.example.demo.model.People;
  * Hello world!
  *
  */
-public class App 
-{
+public class App {
+
     @SuppressWarnings("unchecked")
 	public static void main( String[] args )
     {
     	Logger logger=Logger.getLogger("org.example.App.class");
        try {
 
-    	   SessionFactory sessionFactory= new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Instructor.class).addAnnotatedClass(InstructorDetails.class).addAnnotatedClass(Course.class).addAnnotatedClass(People.class).buildSessionFactory();
+    	   SessionFactory factory = new Configuration().configure("hibernate.cfg.xml")
+					.addAnnotatedClass(Instructor.class).addAnnotatedClass(InstructorDetails.class)
+					.addAnnotatedClass(Course.class).addAnnotatedClass(People.class).buildSessionFactory();
 
 
-
-
+    	   Session session = factory.getCurrentSession();
     	  
     	 
-    	   Session session=sessionFactory.getCurrentSession();
+    	  // Session session= sessionFactory.getCurrentSession();
 
     	   Instructor instructor = new Instructor();
 			InstructorDetails details = new InstructorDetails();
