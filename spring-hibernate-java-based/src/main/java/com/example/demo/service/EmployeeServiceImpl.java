@@ -1,5 +1,4 @@
 package com.example.demo.service;
-
 import java.util.List;
 import java.util.UUID;
 
@@ -25,9 +24,11 @@ public class EmployeeServiceImpl implements EmployeeService{
 		this.modelMapper = modelMapper;
 	}
 
-
-	//@Override
+	
+	
+	@Override
 	public EmployeeResponseModel createEmployee(EmployeeRequestModel employeeDetails) {
+		// TODO Auto-generated method stub
 		modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 		EmployeeDto dto=modelMapper.map(employeeDetails, EmployeeDto.class);
 		dto.setEmployeeId(UUID.randomUUID().toString());
@@ -35,11 +36,30 @@ public class EmployeeServiceImpl implements EmployeeService{
 	}
 
 
+
 	@Override
 	public List<EmployeeResponseModel> displayAllEmployee() {
-		
+		// TODO Auto-generated method stub
+		//modelMapper.getConfiguration().setMatchingStrategy(MatchingStrategies.STRICT);
 		return employeeDaoImpl.displayAllEmployee();
 	}
+
+
+
+	@Override
+	public EmployeeResponseModel updatebyId(String id) {
+		// TODO Auto-generated method stub
+		return employeeDaoImpl.updatebyId(id);
+	}
+
+
+
+	@Override
+	public void deleteEmployee(String id) {
+		// TODO Auto-generated method stub
+		employeeDaoImpl.deleteEmployee(id);
+	}
+
 
 
 	@Override
