@@ -1,6 +1,6 @@
 package com.example.demo.service;
 
-
+import java.util.List;
 import java.util.UUID;
 
 import org.modelmapper.ModelMapper;
@@ -32,6 +32,20 @@ public class EmployeeServiceImpl implements EmployeeService{
 		EmployeeDto dto=modelMapper.map(employeeDetails, EmployeeDto.class);
 		dto.setEmployeeId(UUID.randomUUID().toString());
 		return employeeDaoImpl.createEmployee(dto);
+	}
+
+
+	@Override
+	public List<EmployeeResponseModel> displayAllEmployee() {
+		
+		return employeeDaoImpl.displayAllEmployee();
+	}
+
+
+	@Override
+	public EmployeeResponseModel findByEmployeeId(String employeeId) {
+		// TODO Auto-generated method stub
+		return employeeDaoImpl.findByEmployeeId(employeeId);
 	}
 
 }

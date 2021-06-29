@@ -1,6 +1,5 @@
 package com.example.demo.config;
 
-
 import java.util.Properties;
 
 import javax.sql.DataSource;
@@ -11,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableLoadTimeWeaving;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -20,6 +20,8 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 @Configuration
 @ComponentScan(basePackages = {"com.example"})
+@EnableTransactionManagement
+
 public class ApplicationConfig {
 	
 	@Bean
@@ -58,6 +60,7 @@ public class ApplicationConfig {
 	public HibernateTransactionManager  hibernateTransactionManager (SessionFactory sessionFactory )
 	{
 		HibernateTransactionManager manager=new HibernateTransactionManager(sessionFactory);
+		
 		return manager;
 	}
 	
