@@ -1,16 +1,21 @@
 {
-    "name": "vidly",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-      "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "nodemon index.js"
-    },
-    "author": "",
-    "license": "ISC",
-    "dependencies": {
-      "express": "^4.17.1",
-      "nodemon": "^2.0.8"
-    }
-  }
+  "name": "vidly",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "file": "^0.2.2",
+    "http": "0.0.1-security",
+    "nodemod": "^2.8.4",
+    "nodemon": "^2.0.8",
+    "os": "^0.1.1"
+  },
+  "devDependencies": {},
+  "description": ""
+}
