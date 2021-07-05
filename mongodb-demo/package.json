@@ -1,0 +1,20 @@
+{
+  "name": "mongodb-demo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "file": "^0.2.2",
+    "http": "0.0.1-security",
+    "mongoose": "^5.13.2",
+    "nodemon": "^2.0.9",
+    "os": "^0.1.1"
+  },
+  "devDependencies": {},
+  "description": ""
+}
