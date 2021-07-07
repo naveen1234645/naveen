@@ -1,4 +1,3 @@
-
 package com.example.demo.dao;
 
 import java.util.List;
@@ -10,5 +9,7 @@ public interface BookDao {
 	public List<Book> getAllBook();
 	public Book getBookById(Integer id);
 	public Book getByBookId(String id);
+	public Book updateBookByBookId(String bookId,Book book);
+	public String deleteByBookId(String bookId);
 
 }

@@ -53,6 +53,7 @@ public class BookDaoImpl implements BookDao{
 	}
 
 	@Override
+	
 	public Book getByBookId(String id) {
 		Query query=entityManager.createQuery("SELECT B FROM Book B WHERE B.bookId=:bId",Book.class);
 		query.setParameter("bId", id);
@@ -63,5 +64,25 @@ public class BookDaoImpl implements BookDao{
 			throw new BookNotFoundException("book with the given book_id not found.");
 		}
 		return list.get(0);
+	}
+
+	@Override
+	@Transactional
+	public Book updateBookByBookId(String bookId,Book book) {
+		Book book1=getByBookId(bookId);
+		book1.setBookName(book.getBookName());
+		book1.setBookPrice(book.getBookPrice());
+		entityManager.merge(book1);
+		return book1;
+	}
+
+	@Override
+	@Transactional
+	public String deleteByBookId(String bookId) {
+		// TODO Auto-generated method stub
+		
+		Book book=getByBookId(bookId);
+		entityManager.remove(book);
+		return "deleted sucessfully";
 	}
 }
