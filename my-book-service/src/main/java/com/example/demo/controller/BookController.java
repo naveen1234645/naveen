@@ -59,5 +59,11 @@ public class BookController {
 	public ResponseEntity<Book> getBookById(@PathVariable("id") Integer id) {
 		return ResponseEntity.status(HttpStatus.OK).body(bookService.getBookById(id));
 	}
+	
+	@GetMapping("/api/books/find/{bookId}")
+	public ResponseEntity<Book> getBookByBookId(@PathVariable("bookId") String bookId)
+	{
+		return ResponseEntity.status(HttpStatus.OK).body(bookService.getByBookId(bookId));
+	}
 
 }

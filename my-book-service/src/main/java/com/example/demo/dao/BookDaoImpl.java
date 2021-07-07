@@ -51,4 +51,17 @@ public class BookDaoImpl implements BookDao{
 		}
 		return book1;
 	}
+
+	@Override
+	public Book getByBookId(String id) {
+		Query query=entityManager.createQuery("SELECT B FROM Book B WHERE B.bookId=:bId",Book.class);
+		query.setParameter("bId", id);
+		@SuppressWarnings("unchecked")
+		List<Book> list=query.getResultList();
+		if(list.isEmpty())
+		{
+			throw new BookNotFoundException("book with the given book_id not found.");
+		}
+		return list.get(0);
+	}
 }

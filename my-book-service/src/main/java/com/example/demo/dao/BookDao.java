@@ -9,5 +9,6 @@ public interface BookDao {
 	public Book createBook(Book book);
 	public List<Book> getAllBook();
 	public Book getBookById(Integer id);
+	public Book getByBookId(String id);
 
 }

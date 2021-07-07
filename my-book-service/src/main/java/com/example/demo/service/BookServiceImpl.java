@@ -22,7 +22,8 @@ public class BookServiceImpl implements BookService {
 	@Override
 	public Book createBook(Book book) {
 		// TODO Auto-generated method stub
-		book.setBookId(UUID.randomUUID().toString());
+		String[] str=UUID.randomUUID().toString().split("-");
+		book.setBookId(str[0]);
 		return bookDao.createBook(book);
 	}
 
@@ -36,6 +37,12 @@ public class BookServiceImpl implements BookService {
 	public Book getBookById(Integer id) {
 		// TODO Auto-generated method stub
 		return bookDao.getBookById(id);
+	}
+
+	@Override
+	public Book getByBookId(String id) {
+		// TODO Auto-generated method stub
+		return bookDao.getByBookId(id);
 	}
 
 }
