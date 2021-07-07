@@ -13,9 +13,12 @@ import lombok.ToString;
 @ToString
 public class Book {
 	
-	private String bookId;
+	
+	//}
+		private String bookId;
 	private String bookName;
 	private Double bookPrice;
+	
 	
 		// TODO Auto-generated method stub
 		
