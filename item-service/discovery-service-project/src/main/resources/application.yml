@@ -1,0 +1,17 @@
+eureka:
+  client:
+    fetch-registry: false
+    register-with-eureka: false
+server:
+  port: 8761
+spring:
+  application:
+    name: discovery-service
+  security:
+    user:
+      name: user1
+      password: pass1234
+  boot:
+    admin:
+      client:
+        url: http://admin:admin@localhost:8888/
