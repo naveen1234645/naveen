@@ -1,0 +1,18 @@
+  
+logging:
+  file:
+    name: issue-ws.log
+server:
+  port: 8081
+spring:
+  application:
+    name: issue-servie
+  data:
+    mongodb:
+      database: playground
+      host: localhost
+      port: 27017
+  cloud:
+    config:
+      uri: http://localhost:9090
+      enabled: true

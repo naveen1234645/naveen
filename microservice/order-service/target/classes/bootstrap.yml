@@ -1,0 +1,22 @@
+logging:
+  file:
+    name: order-ws.log
+server:
+  port: 8083
+spring:
+  application:
+    name: order-servie
+  data:
+    mongodb:
+      database: playground
+      host: localhost
+      port: 27017
+  cloud:
+    config:
+      uri: http://localhost:9090
+      enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "refresh"

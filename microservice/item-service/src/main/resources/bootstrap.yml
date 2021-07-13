@@ -1,0 +1,17 @@
+logging:
+  file:
+    name: item-ws.log
+server:
+  port: 8082
+spring:
+  application:
+    name: item-servie
+  cloud:
+    config:
+      uri: http://localhost:9090
+      enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "refresh"
