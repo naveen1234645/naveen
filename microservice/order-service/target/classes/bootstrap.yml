@@ -2,10 +2,10 @@ logging:
   file:
     name: order-ws.log
 server:
-  port: 8083
+  port: ${PORT:0}
 spring:
   application:
-    name: order-servie
+    name: order-service
   data:
     mongodb:
       database: playground
@@ -15,8 +15,6 @@ spring:
     config:
       uri: http://localhost:9090
       enabled: true
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "refresh"
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
