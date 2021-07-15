@@ -9,7 +9,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Bean;
-
+import org.springframework.web.client.RestTemplate;
 import com.example.demo.dao.ItemDao;
 import com.example.demo.model.Item;
 
@@ -43,5 +43,9 @@ public class ItemServiceApplication implements CommandLineRunner {
 		itemDao.save(new Item(UUID.randomUUID().toString(),"Item-5", 100.4, false));
 		itemDao.save(new Item(UUID.randomUUID().toString(),"Item-6", 100.5, true));
 	}
-
+	@Bean
+	public RestTemplate restTemplate()
+	{
+		return new RestTemplate();
+	}
 }

@@ -1,0 +1,24 @@
+logging:
+  file:
+    name: item-ws.log
+server:
+  port: ${PORT:0}
+spring:
+  datasource:
+    url: jdbc:h2:mem:testDB
+    username: sa
+    password: sa
+  application:
+    name: item-service
+  cloud:
+    config:
+      uri: http://localhost:9090
+      enabled: true
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    
+h2:
+  console:
+    enabled: true
+    web-allow-others: true
