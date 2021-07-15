@@ -7,10 +7,13 @@ import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
+import com.example.demo.model.Item;
 import com.example.demo.model.OrderEntity;
 import com.example.demo.service.OrderService;
 
@@ -19,11 +22,13 @@ public class OrderController {
 
 	private Environment environment;
 	private OrderService orderService;
+	private RestTemplate restTemplate;
 
 	@Autowired
-	public OrderController(Environment environment,OrderService orderService) {
+	public OrderController(Environment environment,OrderService orderService,RestTemplate restTemplate) {
 		this.environment = environment;
 		this.orderService=orderService;
+		this.restTemplate=restTemplate;
 	}
 
 	@GetMapping
@@ -40,5 +45,26 @@ public class OrderController {
 	public ResponseEntity<List<OrderEntity>> displayOrders()
 	{
 		return ResponseEntity.ok(orderService.displayOrders());
+	}
+	
+	@GetMapping("/orders/items")
+	public ResponseEntity<List<Item>> getItemFromItemService()
+	{
+		String uri="http://localhost:8088/item-service/items";
+		@SuppressWarnings("unchecked")
+		List<Item> items=restTemplate.getForObject(uri, List.class);
+		return ResponseEntity.ok(items);
+	}
+	@GetMapping("/orders/items/{itemNumber}")
+	public ResponseEntity<Item> getItemfromItemServiceByItemNumber(@PathVariable("itemNumber") String itemNumber)
+	{
+		String uri="http://localhost:8088/item-service//items/"+itemNumber;
+		Item item =restTemplate.getForObject(uri, Item.class);
+		if(item==null)
+		{
+			System.out.println("not found");
+		}
+		return ResponseEntity.ok(item);
+		
 	}
 }
