@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -21,6 +23,11 @@ public class MovieController {
 	public Movie getMovieByName(@PathVariable("movieName") String movieName)
 	{
 		return movieService.findByMovieName(movieName);
+	}
+	@GetMapping("/movies")
+	public List<Movie> getAllMovies()
+	{
+		return movieService.getAllMovies();
 	}
 
 }
