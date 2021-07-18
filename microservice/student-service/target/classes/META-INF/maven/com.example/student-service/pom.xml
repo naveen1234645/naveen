@@ -68,7 +68,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		<finalName>employee-service</finalName>
+		<finalName>student-service</finalName>
 	</build>
 
 </project>
