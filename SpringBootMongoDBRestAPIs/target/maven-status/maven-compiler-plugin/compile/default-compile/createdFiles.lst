@@ -1,0 +1,6 @@
+com\loizenai\springboot\mongodb\rest\WebController.class
+com\loizenai\springboot\mongodb\exception\CustomException.class
+com\loizenai\springboot\mongodb\model\Customer.class
+com\loizenai\springboot\mongodb\SpringBootMongoDbRestApIsApplication.class
+com\loizenai\springboot\mongodb\service\CustomerService.class
+com\loizenai\springboot\mongodb\repository\CustomerRepository.class
